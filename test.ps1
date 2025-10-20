@@ -1,1 +1,1 @@
-test ipconfig
+ipconfig
