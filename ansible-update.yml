@@ -5,7 +5,8 @@
     - name: Update the repository cache
       apt:
         update_cache: yes
-        cache_valid_time: 3600
+        autoremove: true
+        autoclean: true
 
     - name: Install only security updates
       apt:
