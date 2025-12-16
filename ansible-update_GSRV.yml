@@ -1,0 +1,16 @@
+---
+- hosts: gsrv
+  become: true
+  tasks:
+    - name: Update the repository cache
+      apt:
+        update_cache: yes
+        autoremove: true
+        autoclean: true
+
+    - name: Install only security updates
+      apt:
+        upgrade: 'dist'
+        update_cache: yes
+        force_apt_get: yes
+        default_release: "{{ ansible_distribution_release }}-security"
